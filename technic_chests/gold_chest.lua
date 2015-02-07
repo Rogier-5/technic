@@ -1,9 +1,16 @@
 
+local base_chest
+if minetest.get_modpath("moreores") then
+	base_chest = 'technic:silver_chest'
+else
+	base_chest = 'technic:copper_chest'
+end
+	
 minetest.register_craft({
 	output = 'technic:gold_chest',
 	recipe = {
 		{'default:gold_ingot','default:gold_ingot','default:gold_ingot'},
-		{'default:gold_ingot','technic:silver_chest','default:gold_ingot'},
+		{'default:gold_ingot',base_chest,'default:gold_ingot'},
 		{'default:gold_ingot','default:gold_ingot','default:gold_ingot'},
 	}
 })
@@ -12,7 +19,7 @@ minetest.register_craft({
 	output = 'technic:gold_locked_chest',
 	recipe = {
 		{'default:gold_ingot','default:gold_ingot','default:gold_ingot'},
-		{'default:gold_ingot','technic:silver_locked_chest','default:gold_ingot'},
+		{'default:gold_ingot',base_chest,'default:gold_ingot'},
 		{'default:gold_ingot','default:gold_ingot','default:gold_ingot'},
 	}
 })

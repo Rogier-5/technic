@@ -12,7 +12,9 @@ dofile(modpath.."/register.lua")
 dofile(modpath.."/wooden_chest.lua")
 dofile(modpath.."/iron_chest.lua")
 dofile(modpath.."/copper_chest.lua")
-dofile(modpath.."/silver_chest.lua")
 dofile(modpath.."/gold_chest.lua")
-dofile(modpath.."/mithril_chest.lua")
+if minetest.get_modpath("moreores") then
+	dofile(modpath.."/silver_chest.lua")
+	dofile(modpath.."/mithril_chest.lua")
+end
 
